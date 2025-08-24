@@ -1,0 +1,262 @@
+/* =================================
+   PALETA DE CORES E VARIÁVEIS
+   ================================= */
+:root {
+    --bg-dark: #24232A; 
+    --card-bg: #302f36; 
+    --text-peach: #F2C4AE;
+    --text-mint: #A9D0C3;
+    --accent-blue: #B3D4D8;
+    --text-light: #F0F0F0;
+    --border-color: #44434b;
+    --font-primary: 'Poppins', 'Nunito', 'Arial', sans-serif;
+}
+
+/* =================================
+   RESET E ESTILOS GERAIS
+   ================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =================================
+   CABEÇALHO COM A LOGO
+   ================================= */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+/* =================================
+   CONTEÚDO PRINCIPAL (FORMULÁRIO E LISTA)
+   ================================= */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.bet-form, .bets-list {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+h2 {
+    color: var(--text-peach);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+/* =================================
+   FORMULÁRIO
+   ================================= */
+
+/* AQUI ESTÁ A CORREÇÃO FINAL PARA O TÍTULO COM ÍCONES */
+.title-with-icons {
+    /* Mantém o H2 como um bloco, o alinhamento será feito nos filhos */
+}
+
+.h2-icon,
+.title-with-icons span {
+    /* Alinha verticalmente imagem e texto no meio */
+    vertical-align: middle;
+}
+
+.h2-icon {
+    /* Esta é a regra mais importante: força a altura da imagem a ser igual à do texto */
+    height: 1em;
+    width: auto; /* Mantém a proporção */
+    margin: 0 10px; /* Espaçamento lateral */
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--text-light);
+    font-family: var(--font-primary);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--text-mint);
+    box-shadow: 0 0 0 3px rgba(169, 208, 195, 0.3);
+}
+
+::placeholder {
+    color: #888;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--text-mint);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =================================
+   LISTA DE APOSTAS
+   ================================= */
+.bets-list {
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.bet-item {
+    background-color: transparent;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease;
+}
+
+.bet-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Regras para a frase da aposta */
+.bet-item p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.bet-item strong {
+    color: var(--text-peach);
+    font-weight: 600;
+}
+
+/* =================================
+   ESTATÍSTICAS E AÇÕES
+   ================================= */
+.stats {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.stats h3 {
+    color: var(--text-peach);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.stat-item {
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--text-light);
+    min-width: 120px;
+}
+
+.stat-item div:first-of-type {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+#totalBets, #avgWeight, #avgHeight {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--text-mint);
+}
+
+.action-btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: var(--text-mint);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* =================================
+   ANIMAÇÕES E MEDIA QUERIES
+   ================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo {
+        max-width: 250px;
+    }
+
+    h2 { font-size: 1.5em; }
+
+    .stat-item {
+        display: block;
+        margin: 15px auto;
+    }
+}
